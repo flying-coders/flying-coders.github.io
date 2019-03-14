@@ -8,6 +8,10 @@ html, body, div {
   margin-left: 10px;
 }
 
+.centerized {
+  text-align: center;
+}
+
 img {
   width: 100%;;
 }
