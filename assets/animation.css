@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Ubuntu');
+
 *{
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Ubuntu', sans-serif;
   }
   body{
     background: #000;
@@ -12,7 +14,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 100%;
+    width: 90%;
   }
   .container span{
     text-transform: uppercase;
@@ -21,16 +23,19 @@
   .text1{
     color: white;
     font-size: 60px;
-    font-weight: 700;
+    font-weight: lighter;
     letter-spacing: 8px;
     margin-bottom: 20px;
     background: black;
     position: relative;
-    animation: ani 3s;
+    animation: ani 2s;
+    z-index: 99;
   }
   .text2{
-    font-size: 30px;
+    font-size: 2rem;
     color: #6ab04c;
+    letter-spacing: 7px;
+    font-family: 'Inconsolata', monospace !important;
   }
   @keyframes ani{
     0%{
@@ -51,16 +56,19 @@
     top: 200px;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 200px;
+    width: 65px;
     height: 60px;
     line-height: 60px;
     text-align: center;
     font-family: sans-serif;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 18px;
     letter-spacing: 4px;
     color: #fff;
     text-decoration: none;
+    opacity: 1;
+    filter: alpha(opacity=100); 
+    animation: link 3s;
 }
 a svg,
 a svg rect{
@@ -73,13 +81,81 @@ a svg rect{
 }
 a svg rect{
     stroke: #00e2ff;
-    stroke-width: 4;
+    stroke-width: 0;
     transition: 2s;
     stroke-dasharray: 60 200;
     stroke-dashoffset: 320;
 }
 a:hover svg rect{
+    stroke-width: 4;
     stroke: #ff0;
     stroke-dasharray: 200 60;
     stroke-dashoffset: 0;
+    animation: stroke 2s infinite;
 }
+
+.img-responsive {
+  width: 95% !important;
+}
+
+img {
+    position: absolute;
+    top:5%;
+    left:0;
+    right:0;
+    margin: auto;
+    width: 25%;
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+    animation: logo 3s;
+}
+
+@keyframes stroke {
+  0%{
+    stroke: #00e2ff;
+    stroke-width: 4;
+    stroke-dasharray: 60 200;
+    stroke-dashoffset: 320;
+  }
+  50%{
+    stroke: #ff0;
+    stroke-dasharray: 200 60;
+    stroke-dashoffset: 0;
+  }
+  100%{
+    stroke: #00e2ff;
+    stroke-dasharray: 60 200;
+    stroke-dashoffset: 320;
+  }
+}
+
+@keyframes logo {
+    0%{
+      -webkit-filter: grayscale(0) invert(0);
+      filter: grayscale(0) invert(0);  
+    }
+    70%{
+      -webkit-filter: grayscale(0) invert(0);
+      filter: grayscale(0) invert(0);  
+    }
+    100%{
+      -webkit-filter: grayscale(1) invert(1);
+      filter: grayscale(1) invert(1);
+    }
+}
+
+@keyframes link {
+  0%{
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  85%{
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100%{
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+
